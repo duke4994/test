@@ -9,10 +9,24 @@
   <link href="https://fonts.googleapis.com/css?family=Work+Sans:300,400" rel="stylesheet">
   <link rel="shortcut icon" type="image/png" href="img/favicon.png" />
   <link rel="stylesheet" href="style/style.css">
+
+  <!--自己加的背景颜色-->
   <style>
 	  body {background:#ffe6e0;}
-  </style><!--自己加的-->
+  </style>
+
+  <!--播放音乐用-->
+<style>
+  #musicImage {
+      position: fixed;
+      top: 0;
+      left: 0;
+      cursor: pointer;
+  }
+</style>
+
 </head>
+
 
 <body>
   <div class="container">
@@ -129,6 +143,37 @@
       <p class="last-smile" data-node-name="outroSmiley">:)</p>
     </div>
   </div>
+
+
+
+  <!--播放音乐用-->
+  <img id="musicImage" src="img/play music.png" alt="play music">
+  
+  <audio id="music" style="display: none">
+      <source src="http://m10.music.126.net/20231127193231/a6481d42d3f3fc0d2d9f3807b996468e/ymusic/0509/0752/5108/2c1e915b6c08a5667aeefb40a61427ad.mp3" type="audio/mp3">
+      Your browser does not support the audio element.
+  </audio>
+  
+  <script>
+      // 获取音乐和图片元素
+      const music = document.getElementById('music');
+      const musicImage = document.getElementById('musicImage');
+  
+      // 添加点击事件监听器
+      musicImage.addEventListener('click', () => {
+          // 播放音乐
+          music.play();
+  
+          // 隐藏图片
+          musicImage.style.display = 'none';
+      });
+  </script>
+  <!--播放音乐用-->
+
+
+
+
+
 </body>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenMax.min.js"></script>
